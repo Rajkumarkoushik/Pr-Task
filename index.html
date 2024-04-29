@@ -1,25 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css" />
     <!-- Bootstrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
 
+  <body>
+    <!-- Nav section starts -->
+    <nav class="py-4 nav">
+      <section class="container d-flex justify-content-between">
+        <div>
+          <h4>E-Commerce</h4>
+        </div>
+        <div>
+          <input type="search" />
+        </div>
+        <div>
+          <div class="cart-icons d-flex">
+            <div class="position-relative">
+              <i
+                class="fa-solid fa-cart-shopping icon"
+                onclick="cartIcon()"
+              ></i>
+              <span class="position-absolute quantity">0</span>
+            </div>
+            <div class="position-relative">
+              <i class="fa-regular fa-heart icon" onclick="wishList()"></i>
+              <span class="position-absolute wishlist">0</span>
+            </div>
+          </div>
+          <div class="cart cart-icons">
+            <div class="container d-flex justify-content-between py-4">
+              <h4>Cart Items</h4>
+              <i class="fa-solid fa-xmark" onclick="cartIcon()"></i>
+            </div>
+            <div class="list-empty">
+            </div>
+            <div class="total">
+                <button class="total-price"></button>
+            </div>
+            <div class="wish-empty"></div>
+          </div>
+        </div>
+      </section>
+    </nav>
+    <!-- Nav section ends -->
+    <!-- E-commerce starts -->
+    <section class="py-4">
+      <div class="container">
+        <div class="row g-4 cards-list"></div>
+      </div>
+    </section>
+    <!-- E-commerce ends -->
+
+     <!-- Toast notification section starts -->
+     <section class="toast-notification">
+        <div aria-live="polite" aria-atomic="true" class="position-relative">
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-body d-flex align-items-center justify-content-between">
+                <h6>This product has been added before</h6>
+                <div class="toast-header">
+                    <button class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+ <!-- Toast notification section ends -->
+
+    <!-- Todo starts -->
     <form action="">
-        <input type="text" class="text">
-        <button class="button">Click</button>
+      <input type="text" class="text" />
+      <button class="button">Click</button>
     </form>
 
     <div>
-        <ul class="list">
-            
-        </ul>
+      <ul class="list"></ul>
     </div>
+    <!-- Todo starts -->
+
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
