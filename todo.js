@@ -71,3 +71,80 @@ button.addEventListener("click", (e) => {
 });
 
 
+localStorage.setItem('name', "koushik");
+localStorage.removeItem('name');
+console.log(localStorage.getItem('name'));
+
+document.cookie = `name = "koushik"`
+
+
+async function myFunction() {
+    const data = await fetch("https://fakestoreapi.com/products");
+    const cardsData = await data.json();
+
+    let cards = "";
+    cardsData.map((item) => {
+        cards += `
+        <h1>${item.price}</h1>
+        `
+    });
+    document.querySelector(".head").innerHTML = cards;
+}
+myFunction();
+
+
+const promise = new Promise((resolve, reject) => {
+    const age = 18;
+    if (age > 20) {
+        resolve("Age below 18 are  elegible to vote");
+    } else {
+        reject("Age below 18 are not elegible to vote")
+    };
+});
+
+promise
+    .then((success) => {
+        ;
+        console.log(success);
+    }).catch((error) => {
+        console.log(error)
+    });
+
+
+fetch("https://fakestoreapi.com/products").then((data) => {
+    return data.json();
+}).then((cardData) => {
+    let display = "";
+    cardData.map((item) => {
+        display += `
+        <h1>${item.title}</h1>
+        `
+    });
+    document.querySelector(".head").innerHTML = display;
+}).catch((error) => {
+    document.querySelector(".head").innerHTML = error + "The date is not valid.";
+});
+
+
+function fetchData(data) {
+    const promise = new promise((resolve, reject) => {
+        fetch(url).then((response) => {
+            if (response.ok) {
+                console.log("Data fetched successfully");
+            } else {
+                console.log("Data fetched successfully");
+            }
+        });
+    });
+};
+
+const url = "https://fakestoreapi.com/products";
+
+fetchData(url)
+    .then((success) => {
+        console.log(success);
+    }).catch((error) => {
+        console.log(error);
+    });
+
+
